@@ -4,7 +4,7 @@ title:       "Linnea Strid's Portfolio"
 email:       stridlinnea@gmail.com
 author:      Linnea Strid
 description: "The portfolio of UX and Frontend Designer Linnea Strid"
-url:         "http://linneastrid.com"
+baseurl: /smaas
 # Authors
 authors:
   linnea:
