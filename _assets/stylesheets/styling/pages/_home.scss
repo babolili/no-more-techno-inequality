@@ -1,0 +1,11 @@
+.intro-hero {
+  padding: $padding-xl;
+  background-color: $grey-background;
+  @extend %white-fonts;
+  h1 {
+    padding-bottom: $padding-xl;  
+  } 
+  .text {
+    @include col(8,2,$big-tablet,12,0);
+  }
+}

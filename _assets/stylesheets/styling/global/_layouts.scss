@@ -1,0 +1,9 @@
+.navbar-offset {
+	position: absolute;
+	top: $navbar-height;
+	height: 100%;
+}
+
+.container {
+  @include outer-container;
+}

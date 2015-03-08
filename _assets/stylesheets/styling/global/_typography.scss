@@ -13,7 +13,7 @@ html {
     font-size: 13px;
   }
 }
-@import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic|Pacifico|Raleway:600,700,400,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300,700|Libre+Baskerville:400,700,400italic|Inconsolata);
 
 $thin: 100;
 $light: 300;
@@ -26,9 +26,10 @@ $font-black: 900;
 $best-sans-fonts: 'helvetica neue', 'helvetica', 'Arial', sans-serif;
 $best-serif-fonts: 'Georgia', 'Palatino Linotype', 'Book Antiqua', serif;
 
-$sans: 'Raleway', $best-sans-fonts;
-$script: 'Pacifico', cursive;
-$serif: 'Noto Serif', $best-serif-fonts;
+
+$sans: 'Open Sans', $best-sans-fonts;
+$serif: 'Libre Baskerville', $best-serif-fonts;
+$mono: 'Inconsolata', $best-sans-fonts;
 
 strong {
   font-weight: $semibold;
@@ -61,11 +62,11 @@ b {
 
 
 h4,h5 {
-  font-family: $serif;
+  font-family: $sans;
 }
 
 h1 {
-  @include font($sans,rem(60px),$bold,$black);
+  @include font($serif,rem(80px),$bold,$black);
   line-height: 0.85;
 }
 
@@ -74,8 +75,10 @@ h2 {
 }
 
 h3 {
-  @include font($serif,rem(27px),$regular,$text-body-color);
+  @include font($serif,rem(36px),$regular,$text-body-color);
   font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -1px;
 }
 
 blockquote {
@@ -92,7 +95,7 @@ h5 {
 }
 
 p {
-  @include font($serif,rem(20px),$regular,$text-body-color);
+  @include font($sans,rem(20px),$regular,$text-body-color);
   line-height: 1.8;
 }
 
@@ -100,7 +103,7 @@ p {
 %article-typography {
   .question {
     text-align: left;
-    font-family: $serif;
+    font-family: $sans;
     font-weight: normal;
     font-size: rem(24px);
     font-style: italic;
@@ -126,7 +129,7 @@ p {
   }
 
   h5 {
-    font-family: $serif;
+    font-family: $sans;
     font-weight: normal;
     font-size: rem(24px);
     text-align: center;
@@ -168,6 +171,9 @@ p {
     text-align: center;
     padding-left: $padding-xl*2;
     padding-right: $padding-xl*2;
+  }
+  .underline {
+    text-decoration: underline;
   }
 
   p {
@@ -252,7 +258,7 @@ p {
     border-left: 5px solid $seriousfox-color;
     p, h5 {
       text-align: left;
-      font-family: $serif;
+      font-family: $sans;
       font-weight: normal;
       font-size: rem(24px);
     }

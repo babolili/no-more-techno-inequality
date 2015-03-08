@@ -2,28 +2,9 @@
 <html>
 {% include head.html %}
 <body>
-	<header>
-	  <div class="bubble-nav">
-	    <li>
-	      <a href="/">
-	        About
-	      </a>
-	    </li>
-	    <li>
-	      <a href="/work">
-	        Work
-	      </a>
-	    </li>
-	    <li>
-	      <a href="https://medium.com/@babolili" target="_blank">
-	        Writing
-	      </a>
-	    </li>
-	  </div>
-	</header>
-  <div class="container">
-      {{ content }}
-    </div>
-  </div>
+	{% include navigation.html %}
+	<div class="navbar-offset">
+		{{ content }}	
+	</div>
 </body>
 </html>

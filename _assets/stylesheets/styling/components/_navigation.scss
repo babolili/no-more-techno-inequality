@@ -1,5 +1,3 @@
-$navbar-height: rem(55px);
-
 header {
   position: fixed;
   background: rgba(255,255,255,0.95);
@@ -78,7 +76,4 @@ header {
       }
     }
   }
-}
-.container {
-  padding-top: $navbar-height + $padding-xl;
 }
