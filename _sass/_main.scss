@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.site-header a:hover,
+.posts .post a:hover .post-meta,
+.posts .post a:hover .post-title,
+.posts .post a:hover .post-summary {
+  opacity: 0.88;
+}
+
+
+.related-post-title {
+  border-bottom: thin solid #f3f3f3;
+}
+
+.posts .post {
+  margin-bottom: 0.75em;
+  padding-bottom: .375em;
+  border-bottom: thin solid #f3f3f3;
+}
+
+.posts .post:last-child {
+  border-bottom: none;
+  margin-bottom: .375em;
+  padding-bottom: 0;
+}
+
+.post-link .post-title {
+  margin-top: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.post-footer {
+  margin-top: .75rem;
+  text-align: center;
+}
+
+.post-footer .avatar {
+  margin: 2rem 0;
+  width: 100px;
+  border-radius: 50%;
+}
+
+
+.meta,
+.post-meta {
+  width: auto;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+  padding: .25em 0;
+  color: #7a7a7a;
+  font-style: italic;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> gh-pages

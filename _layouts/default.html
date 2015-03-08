@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+{% include head.html %}
+<body>
+	<header>
+	  <a href="/" class="logo">
+	  </a>
+	  <div class="bubble-nav">
+	    <li>
+	      <a href="/">
+	        About
+	      </a>
+	    </li>
+	    <li>
+	      <a href="/work">
+	        Work
+	      </a>
+	    </li>
+	    <li>
+	      <a href="https://medium.com/@babolili" target="_blank">
+	        Writing
+	      </a>
+	    </li>
+	  </div>
+	</header>
+  <div class="container">
+      {{ content }}
     </div>
-
-    {% include footer.html %}
-
-  </body>
-
+  </div>
+</body>
 </html>

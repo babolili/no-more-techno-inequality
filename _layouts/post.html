@@ -1,15 +1,114 @@
----
-layout: default
----
-<div class="post">
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+  {% include post-header.html %}
+  <div class="container post-container">
+    {% assign minutes = content | number_of_words | divided_by: 180 %}
+    {% if minutes == 0 %}
+    {% assign minutes = 1 %}
+    {% endif %}
+    {% assign author = site.authors[page.author] %}
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+    <div class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        <div class="author">
+          <a href="https://twitter.com/{{ author.twitter }}" target="_blank">
+            <span class="author-profile">
+              <img src="{{ author.avatar }}" alt="">
+            </span>
+            <span class="author-name">
+              {{ author.display_name }}
+            </span>
+          </a>
+        </div>
+        <div class="post-date">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </div>
+      </div>
+    </div>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+    <article class="post-content {{ author.display_name }}">
+      {{ content }}
+      <div class="center signature">
+        <img src="/images/fox-sig.png" alt="">
+      </div>
+      <div class="center">
+        <a href="" class="post-after button">Back to the Blog</a>
+      </div>
+    </article>
 
-</div>
+    {% if site.show_post_footers %}
+      {% include post_footer.html %}
+    {% endif %}
+
+    {% if site.disqus_shortname %}
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname  = '{{ site.disqus_shortname }}';
+        var disqus_identifier = '{{ page.id }}';
+
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {% endif %}
+
+    {% if site.show_related_posts %}
+      <h3 class="related-post-title">Related Posts</h3>
+      {% for post in site.related_posts %}
+        <div class="post ml2">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+            <h4 class="post-title">{{ post.title }}</h4>
+            <p class="post-summary">{{ post.summary }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+  <div class="subscribe-wrapper">
+    <div class="container">
+      <div class="subscribe">
+        <div class="signup-header">
+          Love our blog posts? Get them delivered straight to your email!
+        </div>
+        <div id="mc_embed_signup">
+          <form action="//seriousfox.us5.list-manage.com/subscribe/post?u=e7c78bcc6f91a413177d64489&amp;id=bbf11257dc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll" class="signup-fields">
+              <div class="mc-field-group half">
+                <label for="mce-NAME">Your Name </label>
+                <input type="text" value="" name="NAME" class="" id="mce-NAME" placeholder="(optional) So we know what to call you">
+              </div>
+              <div class="mc-field-group half">
+                <label for="mce-EMAIL">
+                  Your Email
+                </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="">
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;">
+              <input type="text" name="b_e7c78bcc6f91a413177d64489_bbf11257dc" tabindex="-1" value="">
+            </div>
+            <div class="signup-button">
+            <label for="">&nbsp;</label>
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="subscribe-button">
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,100 @@
+.blog-header {
+  margin: 40px 0;
+  padding-bottom: 40px;
+  text-align: center;
+  border-bottom: thin solid $border-color;
+  h1 {
+    padding-bottom: $padding-s;
+  }
+}
+
+.logo {
+  background:url('/images/perfectfox.svg') no-repeat;
+  background-color: $seriousfox-color;
+  display: inline-block;
+  color: rgb(99, 166, 159);
+  width: 150px;
+  height: 150px;
+  background-size: 100%;
+  margin-bottom: $padding-s;
+  @include media(max-width 1200px) {
+    width:100px;
+    height:100px;
+  }
+}
+
+.home {
+  @include col(10,1,$tablet, 9, 0);
+}
+.team-row {
+  padding-top: $padding-base;
+
+  .team-image {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(50px);
+    height: rem(50px);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    @include transition(all 0.2s ease-in-out);
+    &:before {
+      @include transition(all 0.2s ease-in-out);
+      @include position(absolute, 0 0 0 0);
+      background-color: transparent;
+      font-family: 'fontawesome';
+      line-height: rem(50px);
+      text-align: center;
+      font-size: rem(30px);
+      color:transparent;
+      display: block;
+      content: $fa-var-twitter;
+    }
+    &:hover {
+      @include transform(scale(1.2,1.2));
+      &:before {
+        color: white;
+      }
+    }
+  }
+  .inactive {
+    display: none;
+  }
+  .team-image + .team-image {
+    margin-left: $padding-xs;
+  }
+}
+
+.blog-by {
+  font-family: $serif;
+  font-size: rem(16px);
+  font-weight: $regular;
+  font-style: italic;
+  a {
+    color: $seriousfox-color;
+    font-weight: $bold;
+  }
+}
+.button {
+  font-family: $sans;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+  padding: 0 $padding-base;
+  border-radius: 3px;
+  border: 1px solid $seriousfox-color;
+  color: $seriousfox-color;
+  @include transition(all 0.2s ease-in-out);
+  &:hover {
+    background-color: $seriousfox-color;
+    color: white;
+  }
+}
+.half {
+  @include col(6,0, $tablet, 9, 0);
+  @include omega(2n);
+}
+.row {
+  @include clearfix;
+  clear: both;
+}

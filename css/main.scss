@@ -1,52 +1,75 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# The scss file which include files from _sass/
 ---
+
 @charset "utf-8";
 
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+@import "hard-reset";
+@import "mixins";
+@import "variables";
+@import "icon-variables";
+@import "typography";
 
+@import "pagination";
+@import "navigation";
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+@import "home";
+@import "post";
 
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+.container {
+  @include outer-container;
 }
 
+footer {
+  margin-top: 40px;
+  border-top: thin solid #f3f3f3;
+}
 
+footer,
+footer .wrap {
+  color: #7a7a7a;
+  background-color: #fafafa;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 300;
+  clear: both;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+  margin: 40px 0 20px;
+  padding:40px 0 20px;
+  border-top: thin solid #f3f3f3;
+  .nav-footer {
+    @include outer-container;
+  }
+  .blog-by {
+    @include span-columns(6);
+  }
+  .footer-links {
+    @include span-columns(6);
+    margin:0;
+    a {
+      color:$seriousfox-color;
+      font-family: $sans;
+      float: right;
+      font-weight: bold;
+      font-size: rem(16px);
+      line-height: 1.25;
+      padding-right: 10px;
+    }
+  }
+
+}
+
+footer:after {
+  content: "";
+  display: block;
+}
+
+.highlight .p {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+// styling for code
+@import "solarized-light";
