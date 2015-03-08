@@ -150,3 +150,5 @@ DEPENDENCIES
   github-pages (= 33)
   jekyll-assets
   json
+  sprockets-helpers
+  sprockets-sass
