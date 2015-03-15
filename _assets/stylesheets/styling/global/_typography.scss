@@ -61,6 +61,7 @@ b {
 }
 
 
+
 h4,h5 {
   font-family: $sans;
 }
@@ -71,7 +72,7 @@ h1 {
 }
 
 h2 {
-   @include font($sans,rem(30px),$light,$black);
+   @include font($sans,rem(35px),$light,$black);
 }
 
 h3 {

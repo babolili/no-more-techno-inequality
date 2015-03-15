@@ -1,7 +1,34 @@
 .intro-hero {
   padding: $padding-xl;
+  background-image: image-url('circuit.svg');
   background-color: $grey-background;
+  background-size: cover;
   @extend %white-fonts;
+  h1 {
+    padding-bottom: $padding-xl;  
+  } 
+  h3, p {
+  	padding-bottom: $padding-l;
+  }
+  .text {
+    @include col(8,2,$big-tablet,12,0);
+  }
+  p {
+    a {
+      color: white;
+      font-weight: bold;
+      border-bottom: 1px solid white;
+      @include transition(all 0.1s ease-in-out);
+      &:hover {
+      	border-bottom: 3px solid white;
+      }
+    }
+  }
+}
+.problem-hero {
+	background: $red;
+	padding: $padding-xl;
+	@extend %white-fonts;
   h1 {
     padding-bottom: $padding-xl;  
   } 
