@@ -1,8 +1,14 @@
+.text {
+  @include col(8,2,$big-tablet,12,0);
+}
+
 .intro-hero {
   padding: $padding-xl;
+  padding-top: $padding-xl*2;
   background-image: image-url('circuit.svg');
   background-color: $grey-background;
   background-size: cover;
+  background-attachment: fixed;
   @extend %white-fonts;
   h1 {
     padding-bottom: $padding-xl;  
@@ -10,9 +16,7 @@
   h3, p {
   	padding-bottom: $padding-l;
   }
-  .text {
-    @include col(8,2,$big-tablet,12,0);
-  }
+  
   p {
     a {
       color: white;
@@ -25,14 +29,21 @@
     }
   }
 }
+
 .problem-hero {
 	background: $red;
 	padding: $padding-xl;
 	@extend %white-fonts;
-  h1 {
+  h2 {
     padding-bottom: $padding-xl;  
   } 
-  .text {
-    @include col(8,2,$big-tablet,12,0);
+  .big-list {
+    border: 6px dotted darken($red,20%);
+    margin: $padding-l 0;
+    padding: $padding-l;
   }
+}
+
+.solution-hero {
+  padding: $padding-xl;
 }

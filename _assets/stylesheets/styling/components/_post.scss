@@ -202,7 +202,6 @@ input {
   }
   .post-content {
     @include col(10,1,$mobile,6,0);
-    @extend %article-typography;
     padding-bottom: $padding-xl;
   }
   .post-meta {

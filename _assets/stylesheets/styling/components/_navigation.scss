@@ -6,21 +6,17 @@ header {
   right: 0px;
   left: 0px;
   height: $navbar-height;
-  border-bottom: 1px solid $background;
+  border-bottom: 4px solid $red;
   .logo {
-    background: lighten($salmon,10%) url('/images/logo.svg') no-repeat;
-    background-size: auto 80%;
-    background-position: 45% center;
-    height: rem(80px);
-    width: rem(80px);
-    border-radius: 50%;
+    background: image-url('logo.svg') no-repeat;
+    background-size: 60%;
+    background-position: center center;
+    width: 200px;
+    height: 100%;
+    top: 0px;
     position: absolute;
     left: rem(80px);
     @include transition(all 1s ease-in-out);
-    &:hover {
-      background-color: darken($salmon, 15%);
-      @include transform(rotate(180deg));
-    }
   }
   .bubble-nav {
     text-align: right;
@@ -31,47 +27,17 @@ header {
       a {
         display: inline-block;
         padding: $padding-l $padding-base;
-        border-radius: 50%;
         text-align: center;
         margin-left: $padding-s;
-        @include font($sans,rem(14px),$semibold,$main-color);
+        @include font($sans,rem(14px),$semibold,$red);
         text-transform: uppercase;
         letter-spacing: 1px;
         position: relative;
         @include transition(all 0.2s ease-in-out);
-        &:before, &:after {
-          position: absolute;
-          width: 5px;
-          height: 5px;
-          content: '';
-          border-radius: 50%;
-          background-color: darken($salmon,15%);
-          display: block;
-          opacity: 0;
-          visibility: hidden;
-          left: 50%;
-          @include transition(all 0.3s ease-in-out);
-        }
-        &:before {
-          top: $padding-l/2;
-          @include transform(translate(-50%, -50%));
-        }
-        &:after {
-          bottom: $padding-l/2;
-          @include transform(translate(-50%, 50%));
-        }
+       
         &:hover {
-          color: darken($salmon,15%);
-          &:before, &:after {
-            opacity: 1;
-            visibility: visible;
-          }
-          &:before {
-            @include transform(translate(-50%, 0%));
-          }
-          &:after {
-            @include transform(translate(-50%, 0%));
-          }
+          background: $red;
+          color: white;
         }
       }
     }

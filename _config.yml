@@ -1,10 +1,10 @@
 # Site settings
 
-title:       "Linnea Strid's Portfolio"
+title:       "The SMaaS project"
 email:       stridlinnea@gmail.com
 author:      Linnea Strid
-description: "The portfolio of UX and Frontend Designer Linnea Strid"
-url:         "http://linneastrid.com"
+description: "Short Messaging as a service: converting online software into SMS-based services"
+url:         "http://smaasproject.com"
 # Authors
 authors:
   linnea:

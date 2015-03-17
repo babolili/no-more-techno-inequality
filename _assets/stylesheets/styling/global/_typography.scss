@@ -72,7 +72,7 @@ h1 {
 }
 
 h2 {
-   @include font($sans,rem(35px),$light,$black);
+   @include font($sans,rem(60px),$light,$black);
 }
 
 h3 {
@@ -101,7 +101,7 @@ p {
 }
 
 
-%article-typography {
+
   .question {
     text-align: left;
     font-family: $sans;
@@ -197,6 +197,9 @@ p {
   div + p, div + h1, div + h2, div + h3, div + h4, div + h5 {
     padding-top: $padding-l;
   }
+  .red {
+    color: $red;
+  }
 
   code {
     background-color: #F0F0F0;
@@ -222,7 +225,6 @@ p {
         font-family: 'fontawesome';
         font-size: rem(12px);
         content: $fa-var-circle;
-        color: $seriousfox-color;
         position: absolute;
         left: 0px;
         top: 0;
@@ -244,7 +246,6 @@ p {
         counter-increment: section;
         font-weight: bold;
         content: counters(section,".")".";
-        color: $seriousfox-color;
         position: absolute;
         left: 0px;
         top: 0px;
@@ -264,4 +265,11 @@ p {
       font-size: rem(24px);
     }
   }
-}
+  .big-list {
+    li {
+      @include font($sans, rem(24px), $regular, white);
+      padding-left: $padding-xl + $padding-s;
+      padding-bottom: $padding-xl;
+      line-height: 1.2;
+    }
+  }
