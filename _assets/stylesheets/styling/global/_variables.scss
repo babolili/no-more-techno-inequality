@@ -22,8 +22,10 @@ $font-black: 900;
 $background: #F5F3F0;
 $grey-background: #363638;
 $main-color: #666666;
-$text-body-color: #908883;
 $black: #363638;
+$text-body-color: lighten($black,25%);
+$sms-bg: #B9DFCA;
+$sms-color: #344338;
 
 
 $salmon: #FF9982;

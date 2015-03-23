@@ -43,8 +43,15 @@ b {
 }
 
 %white-fonts {
+  color: white;
   h1,h2,h3,h4,h5,p {
     color: white;
+  }
+}
+%sms-fonts {
+  color: $sms-color;
+  h1,h2,h3,h4,h5,p {
+    color: $sms-color;
   }
 }
 %link-styling {
@@ -76,7 +83,7 @@ h2 {
 }
 
 h3 {
-  @include font($serif,rem(36px),$regular,$text-body-color);
+  @include font($serif,rem(36px),$regular,$red);
   font-style: italic;
   line-height: 1.4;
   letter-spacing: -1px;
@@ -92,7 +99,7 @@ h4 {
 }
 
 h5 {
-  @include font($sans,rem(50px),$bold,$black);
+  @include font($mono,rem(50px),$bold,$black);
 }
 
 p {
@@ -130,28 +137,12 @@ p {
   }
 
   h5 {
-    font-family: $sans;
+    font-family: $mono;
     font-weight: normal;
-    font-size: rem(24px);
+    font-size: rem(50px);
     text-align: center;
-    font-style: italic;
     line-height: 1.6;
     padding: $padding-l $padding-l;
-    &:before, &:after {
-      display: block;
-      clear: both;
-      width: 300px;
-      margin: 0 auto;
-      height: 1px;
-      content: '';
-      background-color: $seriousfox-color;
-    }
-    &:before {
-      margin-bottom: $padding-s;
-    }
-    &:after {
-      margin-top: $padding-base;
-    }
   }
   .caption {
     font-size: rem(14px);
@@ -273,3 +264,8 @@ p {
       line-height: 1.2;
     }
   }
+
+.sms-style {
+  background: $sms-bg;
+  color: $sms-color;
+}

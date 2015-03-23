@@ -47,3 +47,13 @@
 .solution-hero {
   padding: $padding-xl;
 }
+.sms-hero {
+  padding: $padding-xl;
+  background-color: $background;
+}
+.sms-styling {
+  background-color: $sms-bg;
+  background-image: image-url('rgb.png');
+  box-shadow: 0px 0px $padding-base 0px rgba($sms-color,0.4) inset;
+  @extend %sms-fonts;
+}
