@@ -21,6 +21,34 @@ header {
       left: 0px;
     }
   }
+  .nav-button {
+    display: none;
+  }
+  @include media($tablet) {
+    .nav-button {
+      cursor: pointer;
+      position: absolute;
+      top: $navbar-height/2 - rem(40px)/2;
+      right: $padding-base;
+      display: block;
+      z-index: 999;
+      li {
+        display:block;
+        width: rem(40px);
+        height: rem(6px);
+        margin-top: rem(6px);
+        padding: 0;
+        background: $red;
+        border-radius: rem(6px);
+        @include transition(all, 0.3s);
+      }
+      &:hover {
+        li {
+          background: darken($red, 10%);
+        }
+      }
+    }
+  }
   .bubble-nav {
     text-align: right;
     padding-right: $padding-xl; 
@@ -37,10 +65,37 @@ header {
         letter-spacing: 1px;
         position: relative;
         @include transition(all 0.2s ease-in-out);
-       
         &:hover {
           background: $red;
           color: white;
+        }
+      }
+    }
+    @include media($tablet) {
+      display: none;
+      &.show {
+        display: block;
+        padding: 0px; 
+        position: fixed;
+        top: $navbar-height;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: rgba($red,0.95);
+        li {
+          display: block;
+          a {
+            display: block;
+            text-align: right;
+            color: white;
+            font-weight: $bold;
+            font-size: rem(18px);
+            margin: 0px;
+            border-bottom: 1px solid darken($red,10%);
+            &:hover {
+              background: darken($red,10%);
+            }
+          }
         }
       }
     }
