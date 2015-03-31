@@ -19,6 +19,7 @@ $mono: 'Inconsolata', $best-sans-fonts;
 
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: $sans;
   color: $text-body-color;
 }

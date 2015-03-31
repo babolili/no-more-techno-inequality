@@ -9,14 +9,17 @@ header {
   border-bottom: 4px solid $red;
   .logo {
     background: image-url('logo.svg') no-repeat;
-    background-size: 60%;
-    background-position: center center;
-    width: 200px;
+    background-size: 100%;
+    background-position: center left;
+    width: 100px;
     height: 100%;
     top: 0px;
     position: absolute;
     left: rem(80px);
     @include transition(all 1s ease-in-out);
+    @include media($big-tablet) {
+      left: 0px;
+    }
   }
   .bubble-nav {
     text-align: right;

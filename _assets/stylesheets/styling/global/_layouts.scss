@@ -32,3 +32,9 @@ body, html {
 		} 
 	}
 }
+.offset-scroll {
+	display: block; 
+	position: relative; 
+	top: -$navbar-height; 
+	visibility: hidden;
+}
