@@ -9,64 +9,6 @@
     position: absolute;
   }
 }
-// Posts
-.posts {
-  @include media($tablet) {
-    padding:0 20px;
-  }
-}
-
-.signup-fields {
-  @include col(10,0,$tablet,9,0);
-}
-.signup-button {
-  @include col(2,0,$tablet,9,0);
-}
-#mc_embed_signup {
-  @include clearfix;
-  clear: both;
-}
-.subscribe-wrapper {
-  background-color: #f1f1f1;
-}
-.subscribe {
-  @include col(10,1,$mobile,6,0);
-  padding: $padding-xl 0;
-  &:before, &:after {
-    display: block;
-    clear: both;
-    width: 300px;
-    margin: 0 auto;
-    height: 1px;
-    content: '';
-    background-color: $seriousfox-color;
-  }
-  &:before {
-    margin-bottom: $padding-xl;
-  }
-  &:after {
-    margin-top: $padding-xl;
-  }
-}
-.subscribe-button {
-  background: $seriousfox-color !important;
-  color: white;
-  font-family: $sans;
-  &:hover {
-    background: darken($seriousfox-color, 20%) !important;
-  }
-}
-.signup-header {
-  font-family: $sans;
-  font-weight: normal;
-  font-size: rem(24px);
-  font-style: italic;
-  line-height: 1.6;
-  padding-bottom: $padding-base;
-}
-.signature {
-  padding-top: $padding-base;
-}
 input {
   font-family: $sans !important;
 }
@@ -84,6 +26,7 @@ input {
 //     </p>
 //   </a>
 // </div>
+
 .gist .line-numbers {
   width: $padding-l * 2;
 }
@@ -99,7 +42,7 @@ input {
   .post-link {
     &:hover {
       .post-title {
-        color: $brand-orange;
+        color: $red;
       }
     }
   }
@@ -110,16 +53,10 @@ input {
     margin: .75rem 0;
   }
 }
-.post-header {
-  .post-meta {
-    .post-date {
-      text-align: center;
-      &:after {
-        content: '–'
-      }
-    }
-  }
+.post-container {
+  padding: $padding-xl;
 }
+
 .post-meta {
   color: $blue-grey;
   padding-bottom: 3rem;
@@ -128,51 +65,31 @@ input {
   text-align: left;
   width: auto;
 
-  .author {
-    display:inline-block;
-    font-style: italic;
-    &:before {
-      content: 'Written by';
-      font-style: italic;
-      margin-right: $padding-xs;
-      line-height: rem(40px);
-      display: inline-block;
-      vertical-align: middle;
-    }
+  .post-author  {
+    display: inline-block;
+    vertical-align: middle;
     a {
-      .author-name {
-        color:$salmon;
-        font-weight: $semibold;
-        border-bottom: 1px solid transparent;
-      }
-      &:hover {
-        .author-name {
-          border-bottom: 1px solid $salmon;
-        }
-        .author-profile {
-          @include transform(scale(1.1, 1.1));
-        }
-      }
-    }
-    .author-profile {
-      width: rem(50px);
-      height: rem(50px);
-      border-radius: 50%;
-      overflow: hidden;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: $padding-xs;
-      @include transition(all 0.2s ease-in-out);
-    }
-    .author-name {
-      display: inline-block;
-      vertical-align: middle;
+      color:$red;  
+      font-weight: $semibold;
+      border-bottom: 1px solid transparent;
       @include transition(border 0.2s ease-in-out);
+      &:hover {
+        border-bottom: 1px solid $salmon;
+      }
+    }
+    
+    &:before {
+      content: 'Created by';
+      font-style: italic;
+      color: $blue-grey;
+      font-weight: $regular;
     }
   }
   .post-date {
     font-family: $sans;
     font-size: rem(14px);
+    display: inline-block;
+    vertical-align: middle;
     line-height: rem(40px);
     &:before {
       content: '–'
@@ -183,30 +100,19 @@ input {
   }
 
 }
-
 // Post Container
-.post-container {
-
-  @include media($tablet) {
-    padding:0 20px;
+.post-header {
+  text-align: center;
+  padding-bottom: rem(20px);
+  margin-bottom: rem(20px);
+  border-bottom: 1px solid rgba(228, 229, 233, 0.96);
+  @include col(10,1,$mobile,6,0);
+  h1 {
+    padding-bottom: $padding-base;
   }
-  .post-header {
-    text-align: center;
-    padding-bottom: rem(20px);
-    margin-bottom: rem(20px);
-    border-bottom: 1px solid rgba(228, 229, 233, 0.96);
-    @include col(10,1,$mobile,6,0);
-    h1 {
-      padding-bottom: $padding-base;
-    }
-  }
-  .post-content {
-    @include col(10,1,$mobile,6,0);
-    padding-bottom: $padding-xl;
-  }
-  .post-meta {
-    text-align: center;
-  }
+}
+.post-meta {
+  text-align: center;
 }
 .post-meta {
   display: inline-block;
@@ -215,25 +121,8 @@ input {
 .highlight pre code {
   font-size: rem(14px);
 }
-
 .highlight + .highlight {
   margin-top: $padding-base;
-}
-.read-more {
-  font-family: $sans;
-  font-size: rem(12px);
-  margin-top: 20px;
-  display: inline-block;
-  padding: 0 $padding-base;
-  border-radius: 3px;
-  border: 1px solid $salmon;
-  float: right;
-  color: $salmon;
-  @include transition(all 0.2s ease-in-out);
-  &:hover {
-    background-color: $salmon;
-    color: white;
-  }
 }
 @mixin author-button($color) {
   color: $color;

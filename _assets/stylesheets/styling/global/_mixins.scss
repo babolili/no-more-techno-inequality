@@ -6,6 +6,10 @@
     @include shift($shift-to);
   }
 }
+@mixin simple-col($col-no, $shift-no) {
+  @include span-columns($col-no);
+  @include shift($shift-no);
+}
 
 @mixin font($family, $size, $weight, $color) {
   font-family: $family;

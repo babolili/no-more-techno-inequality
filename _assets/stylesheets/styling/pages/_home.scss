@@ -1,5 +1,8 @@
 .text {
-  @include col(8,2,$big-tablet,12,0);
+  @include col(8,2,$big-tablet,10,1);
+  @include media($phone) {
+    @include simple-col(9,0);
+  }
 }
 
 .intro-hero {
@@ -10,30 +13,17 @@
   background-size: cover;
   background-attachment: fixed;
   @extend %white-fonts;
-  h1 {
-    padding-bottom: $padding-xl;  
-  } 
+  @extend %link-styling;
   h3, p {
   	padding-bottom: $padding-l;
   }
-  
-  p {
-    a {
-      color: white;
-      font-weight: bold;
-      border-bottom: 1px solid white;
-      @include transition(all 0.1s ease-in-out);
-      &:hover {
-      	border-bottom: 3px solid white;
-      }
-    }
-  }
 }
 
-.problem-hero {
+.red-hero {
 	background: $red;
 	padding: $padding-xl;
 	@extend %white-fonts;
+  @extend %white-links;
   h2 {
     padding-bottom: $padding-xl;  
   } 
@@ -44,16 +34,56 @@
   }
 }
 
-.solution-hero {
+.white-hero {
   padding: $padding-xl;
+  @extend %link-styling;
 }
-.sms-hero {
+.grey-hero {
   padding: $padding-xl;
   background-color: $background;
+  @extend %link-styling; 
 }
-.sms-styling {
+.twilio-hero {
+  padding: $padding-xl;
+  background-color: $grey-background;
+  @extend %white-fonts;
+  @extend %link-styling; 
+  .twilio-bubble {
+    padding: $padding-xl;
+    @include col(4,0,$phone,3,0);
+    background: $twilio;
+    border-radius: $padding-base;
+    margin-bottom: $padding-xl;
+    display: block;
+    @include media($phone) {
+      padding: $padding-base;
+    }
+    &:hover {
+      background: darken($twilio, 10%);
+    }
+  }
+  .twilio-caption {
+    @include col(6,0,$phone,9,0);
+  }
+}
+.sms-window {
+  min-height: 250px;
+  padding: $padding-base;
   background-color: $sms-bg;
+  font-family: $mono;
+  font-size: rem(18px);
+  font-weight: $semibold;
   background-image: image-url('rgb.png');
   box-shadow: 0px 0px $padding-base 0px rgba($sms-color,0.4) inset;
   @extend %sms-fonts;
+  &.service {
+    background-color: darken($sms-bg,20%);
+  }
+}
+
+.small-preview {
+  @include col(4,0,$large-phone,6,0);
+  @include media($large-phone) {
+    @include omega(2n);
+  }
 }
