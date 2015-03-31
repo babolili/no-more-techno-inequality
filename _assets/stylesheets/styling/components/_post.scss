@@ -1,0 +1,136 @@
+// Post Header
+// <header class="post-header">
+//   <a href="{{ site.url }}" class="logo"></a>
+// </header>
+.post-page-header {
+  min-height: 106px;
+  padding-left: 40px;
+  .logo {
+    position: absolute;
+  }
+}
+input {
+  font-family: $sans !important;
+}
+
+// <div class="post">
+//   <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+//     <h3 class="post-title">{{ post.title }}</h3>
+//     <p class="post-summary">{{ post.summary }}</p>
+//     <p class="post-meta">
+//       <div class="author">
+//         <span>by </span><a href="{{ author.twitter }}">{{ author.display_name }}</a>
+//       </div>
+//       .post-date
+//       {{ post.date | date: "%b %-d, %Y" }}
+//     </p>
+//   </a>
+// </div>
+
+.gist .line-numbers {
+  width: $padding-l * 2;
+}
+.post {
+  padding-bottom: 3rem;
+
+  .post-title {
+    @include transition(color .2s);
+    color:rgba(46, 48, 58, 0.96);
+  }
+  .post-link {
+    &:hover {
+      .post-title {
+        color: $red;
+      }
+    }
+  }
+  .post-summary {
+    color: rgba(142, 146, 166, 0.96);
+    font-size: 1em;
+    line-height: 1.75;
+    margin: .75rem 0;
+  }
+}
+.post-container {
+  padding: $padding-xl;
+}
+
+.post-meta {
+  color: $blue-grey;
+  padding-bottom: 3rem;
+  text-align: center;
+  padding-bottom: 0;
+  text-align: left;
+  width: auto;
+
+  .post-author  {
+    display: inline-block;
+    vertical-align: middle;
+    a {
+      color:$red;  
+      font-weight: $semibold;
+      border-bottom: 1px solid transparent;
+      @include transition(border 0.2s ease-in-out);
+      &:hover {
+        border-bottom: 1px solid $salmon;
+      }
+    }
+    
+    &:before {
+      content: 'Created by';
+      font-style: italic;
+      color: $blue-grey;
+      font-weight: $regular;
+    }
+  }
+  .post-date {
+    font-family: $sans;
+    font-size: rem(14px);
+    display: inline-block;
+    vertical-align: middle;
+    line-height: rem(40px);
+    &:before {
+      content: '–'
+    }
+  }
+  .tags {
+    display:inline-block;
+  }
+
+}
+// Post Container
+.post-header {
+  text-align: center;
+  padding-bottom: rem(20px);
+  margin-bottom: rem(20px);
+  border-bottom: 1px solid rgba(228, 229, 233, 0.96);
+  @include col(10,1,$mobile,6,0);
+  h1 {
+    padding-bottom: $padding-base;
+  }
+}
+.post-meta {
+  text-align: center;
+}
+.post-meta {
+  display: inline-block;
+  vertical-align: middle;
+}
+.highlight pre code {
+  font-size: rem(14px);
+}
+.highlight + .highlight {
+  margin-top: $padding-base;
+}
+@mixin author-button($color) {
+  color: $color;
+  border-color: $color;
+  &:hover {
+    background-color: $color;
+    color: white;
+  }
+}
+.post {
+  padding-top: $padding-l;
+  border-top: 1px solid $border-base-color;
+}

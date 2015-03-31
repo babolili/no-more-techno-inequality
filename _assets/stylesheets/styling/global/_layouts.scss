@@ -1,0 +1,34 @@
+body, html {
+	overflow-x: hidden;
+}
+.navbar-offset {
+	position: absolute;
+	top: $navbar-height;
+	height: 100%;
+}
+
+.container {
+  @include outer-container;
+}
+.row {
+	clear: both;
+	@include clearfix;
+	display: block;
+	width: 100%;
+}
+.sms-row {
+	clear: both;
+	@include clearfix;
+	display: block;
+	width: 100%;
+	counter-reset: chapter;
+	.small-preview {
+		@include media($min-large-phone) {
+			@include omega(3n);
+		}
+		h5:before {
+			counter-increment: chapter;               /* Increment the section counter*/
+			content: counter(chapter) '. ';
+		} 
+	}
+}

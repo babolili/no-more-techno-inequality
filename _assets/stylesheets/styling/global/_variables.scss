@@ -1,0 +1,48 @@
+$base-font-size: 16px;
+
+@function rem($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+
+$border-color: #f3f3f3;
+$seriousfox-color: rgb(249, 182, 115);
+$brand-orange: #F79653;
+$blue-grey: #5B5F73;
+$twilio: #D42432;
+$thin: 100;
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+$heavy: 800;
+$font-black: 900;
+
+//colors
+$background: #ededed;
+$grey-background: #363638;
+$main-color: #666666;
+$black: #363638;
+$text-body-color: lighten($black,25%);
+$sms-bg: #B9DFCA;
+$sms-color: #344338;
+
+
+$salmon: #FF9982;
+$matterhorn: #A186BE;
+$blue: #95c7db;
+$green: #ACC688;
+$orange: #F79653;
+$red: rgb(197, 60, 86);
+//borders
+$border-base-radius: rem(4px);
+$border-base-color: #dddddd;
+
+//paddings
+$padding-xl: rem(30px);
+$padding-l: rem(20px);
+$padding-base: rem(15px);
+$padding-s: $padding-l/2;
+$padding-xs: $padding-l/4;
+
+$navbar-height: rem(55px);

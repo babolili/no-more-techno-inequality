@@ -1,0 +1,45 @@
+header {
+  position: fixed;
+  background: rgba(255,255,255,0.95);
+  z-index: 999;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: $navbar-height;
+  border-bottom: 4px solid $red;
+  .logo {
+    background: image-url('logo.svg') no-repeat;
+    background-size: 60%;
+    background-position: center center;
+    width: 200px;
+    height: 100%;
+    top: 0px;
+    position: absolute;
+    left: rem(80px);
+    @include transition(all 1s ease-in-out);
+  }
+  .bubble-nav {
+    text-align: right;
+    padding-right: $padding-xl; 
+    @include outer-container;
+    li {
+      display: inline-block;
+      a {
+        display: inline-block;
+        padding: $padding-l $padding-base;
+        text-align: center;
+        margin-left: $padding-s;
+        @include font($sans,rem(14px),$semibold,$red);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        @include transition(all 0.2s ease-in-out);
+       
+        &:hover {
+          background: $red;
+          color: white;
+        }
+      }
+    }
+  }
+}

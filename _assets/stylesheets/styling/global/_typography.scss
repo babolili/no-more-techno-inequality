@@ -1,0 +1,287 @@
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300,700|Libre+Baskerville:400,700,400italic|Inconsolata);
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+$heavy: 800;
+$font-black: 900;
+
+$best-sans-fonts: 'helvetica neue', 'helvetica', 'Arial', sans-serif;
+$best-serif-fonts: 'Georgia', 'Palatino Linotype', 'Book Antiqua', serif;
+
+
+$sans: 'Open Sans', $best-sans-fonts;
+$serif: 'Libre Baskerville', $best-serif-fonts;
+$mono: 'Inconsolata', $best-sans-fonts;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: $sans;
+  color: $text-body-color;
+}
+html {
+  font-size: 16px;
+  @include media($small-screen) {
+    font-size: 15px;
+  }
+  @include media($big-tablet) {
+    font-size: 14px;
+  }
+  @include media($large-phone) {
+    font-size: 13px;
+  }
+}
+
+strong {
+  font-weight: $semibold;
+}
+b {
+  font-weight: $bold;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+%white-fonts {
+  color: white;
+  h1,h2,h3,h4,h5,p {
+    color: white;
+  }
+}
+%white-links {
+  h1,h2,h3,h4,h5,p,.caption,.aside {
+    a {
+      color: white;
+      font-weight: $bold;
+      border-bottom: 1px solid white;
+      @include transition(all 0.1s ease-in-out);
+      &:hover {
+        border-bottom: 3px solid white;
+      }
+    }
+  }
+}
+%sms-fonts {
+  color: $sms-color;
+  h1,h2,h3,h4,h5,p {
+    color: $sms-color;
+  }
+}
+%link-styling {
+  h1, h2, h3, h4, h5, h6, p, .caption, .aside {
+    a {
+      color: $red;
+      font-weight: bold;
+      @include transition(all 0.1s ease-in-out);
+      &:hover {
+        border-bottom: 1px solid $red;
+      }
+    }
+  }
+}
+
+
+
+h4,h5 {
+  font-family: $sans;
+}
+
+h1 {
+  @include font($serif,rem(80px),$bold,$black);
+  line-height: 0.85;
+  padding-bottom: $padding-xl;  
+}
+
+h2 {
+   @include font($sans,rem(60px),$light,$black);
+}
+
+h3 {
+  @include font($serif,rem(36px),$regular,$red);
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
+
+blockquote {
+  padding-bottom: $padding-xl;
+  position: relative;
+}
+
+h4 {
+  @include font($sans,rem(24px),$semibold,$black);
+}
+
+h5 {
+  @include font($mono,rem(18px),$bold,$sms-color);
+}
+
+p {
+  @include font($sans,rem(20px),$regular,$text-body-color);
+  line-height: 1.8;
+}
+
+
+
+.question {
+  text-align: left;
+  font-family: $sans;
+  font-weight: normal;
+  font-size: rem(24px);
+  font-style: italic;
+  &:before {
+    font-family: 'fontawesome';
+    color: $seriousfox-color;
+    content: $fa-var-angle-double-right;
+    padding-right: $padding-base;
+  }
+}
+
+
+h2 {
+  padding-bottom: $padding-s;
+}
+
+h3 {
+  padding-bottom: $padding-s;
+}
+
+h4 {
+  padding-bottom: $padding-s;
+}
+.caption {
+  font-size: rem(14px);
+  font-style: italic;
+  padding-bottom: $padding-xs;
+  text-align: center;
+}
+.caption, .aside {
+  font-size: rem(14px);
+  font-style: italic;
+  padding-bottom: $padding-xs;
+  line-height: 1.4;
+}
+.aside {
+  max-width: 80%;
+}
+.caption {
+  text-align: center;
+  padding-left: $padding-xl*2;
+  padding-right: $padding-xl*2;
+  @include media($large-phone) {
+    clear: both;
+  }
+}
+.underline {
+  text-decoration: underline;
+}
+
+p {
+  padding-bottom: $padding-l;
+  line-height: 1.6;
+
+}
+p, h1, h2, h3, h4, h5, ul, ol {
+  a {
+    color: $salmon;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid $seriousfox-color;
+    }
+  }
+}
+p + h2 , p + h3, p + h4, p + h5 {
+  padding-top: $padding-base;
+}
+div + p, div + h1, div + h2, div + h3, div + h4, div + h5 {
+  padding-top: $padding-l;
+}
+.red {
+  color: $red;
+}
+
+code {
+  background-color: #F0F0F0;
+  border: 1px solid #E8E8E8;
+  font-size: rem(14px);
+}
+.highlight code {
+  border: 1px solid transparent;
+}
+
+
+ul {
+  margin: 0px;
+  padding-left: 0px;
+  list-style-type: none;
+  padding-top: $padding-s;
+  padding-bottom: $padding-l;
+  li {
+    position: relative;
+    padding-left: $padding-l;
+    padding-bottom: $padding-s;
+    &:before {
+      font-family: 'fontawesome';
+      font-size: rem(12px);
+      content: $fa-var-circle;
+      position: absolute;
+      left: 0px;
+      top: 0;
+    }
+  }
+}
+ol {
+  padding-bottom: $padding-l;
+  counter-reset: section;
+  margin: 0px;
+  font-family: $sans;
+  color: $black;
+  font-size: rem(18px);
+  padding-left: 0px;
+  list-style-type: none;
+  li {
+    position: relative;
+    padding-left: $padding-l + $padding-xs;
+    padding-bottom: $padding-s;
+    &:before {
+      counter-increment: section;
+      font-weight: bold;
+      content: counters(section,".")".";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+    ul {
+      counter-reset: section;
+    }
+  }
+}
+blockquote {
+  padding-left: $padding-l;
+  padding-top: $padding-s;
+  padding-bottom: $padding-s;
+  font-style: italic;
+  border-left: 5px solid $seriousfox-color;
+  p, h5 {
+    text-align: left;
+    font-family: $sans;
+    font-weight: normal;
+    font-size: rem(24px);
+  }
+}
+.big-list {
+  li {
+    @include font($sans, rem(24px), $regular, white);
+    padding-left: $padding-xl + $padding-s;
+    padding-bottom: $padding-xl;
+    line-height: 1.2;
+  }
+}
+
+.center {
+  text-align: center;
+}
