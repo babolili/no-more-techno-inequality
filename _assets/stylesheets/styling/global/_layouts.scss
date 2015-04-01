@@ -1,5 +1,9 @@
 body, html {
 	overflow-x: hidden;
+	&.noscroll {
+		overflow-y: hidden;
+		overflow-x: hidden;
+	}
 }
 .navbar-offset {
 	position: absolute;
