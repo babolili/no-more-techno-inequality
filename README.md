@@ -59,3 +59,4 @@ To create SMS mockups
   </div>
 </div>
 ```
+If you are not comfortable with coding, you can create your design in the `_drafts` folder, and it can be edited when there is time.
