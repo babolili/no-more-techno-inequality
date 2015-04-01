@@ -1,13 +1,13 @@
 .text {
   @include col(8,2,$big-tablet,10,1);
+  padding: $padding-xl;
   @include media($phone) {
     @include simple-col(9,0);
   }
 }
 
 .intro-hero {
-  padding: $padding-xl;
-  padding-top: $padding-xl*2;
+  padding-top: $padding-xl;
   background-image: image-url('circuit.svg');
   background-color: $grey-background;
   background-size: cover;
@@ -21,7 +21,6 @@
 
 .red-hero {
 	background: $red;
-	padding: $padding-xl;
 	@extend %white-fonts;
   @extend %white-links;
   h2 {
@@ -35,16 +34,13 @@
 }
 
 .white-hero {
-  padding: $padding-xl;
   @extend %link-styling;
 }
 .grey-hero {
-  padding: $padding-xl;
   background-color: $background;
   @extend %link-styling; 
 }
 .twilio-hero {
-  padding: $padding-xl;
   background-color: $grey-background;
   @extend %white-fonts;
   @extend %link-styling; 

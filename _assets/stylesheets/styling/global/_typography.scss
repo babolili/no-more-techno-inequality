@@ -95,6 +95,10 @@ h1 {
   @include font($serif,rem(80px),$bold,$black);
   line-height: 0.85;
   padding-bottom: $padding-xl;  
+
+  @include media($large-phone) {
+    font-size: rem(60px);
+  }
 }
 
 h2 {
